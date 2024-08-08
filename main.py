@@ -6,7 +6,10 @@ from threading import Thread
 import os
 import time
 
-os.chdir(r"C:\Users\Dmitri Ballarino\Downloads\python save folder\New folder")
+path = os.path.realpath(__file__)
+file_name = os.path.basename(path)
+path = path.replace(file_name, '')
+os.chdir(path)
 
 def thread(target, daemon_q):
         thread0 = Thread(target= target)
